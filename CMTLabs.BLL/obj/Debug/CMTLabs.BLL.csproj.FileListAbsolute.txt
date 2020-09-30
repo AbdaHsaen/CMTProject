@@ -1,0 +1,16 @@
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\CMTLabs.BLL.dll
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\CMTLabs.BLL.pdb
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\obj\Debug\CMTLabs.BLL.csprojAssemblyReference.cache
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\obj\Debug\CMTLabs.BLL.csproj.CoreCompileInputs.cache
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\obj\Debug\CMTLabs.BLL.dll
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\obj\Debug\CMTLabs.BLL.pdb
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\CMTLabs.Common.dll
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\CMTLabs.DAL.dll
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\EntityFramework.dll
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\AutoMapper.dll
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\CMTLabs.Common.pdb
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\CMTLabs.DAL.pdb
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\CMTLabs.DAL.dll.config
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\EntityFramework.xml
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\bin\Debug\AutoMapper.xml
+C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.BLL\obj\Debug\CMTLabs.BLL.csproj.CopyComplete

@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CMTLab_DBModelStoreContainer" CdmEntityContainer="CMTLab_DBEntities">
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.Address">
+        <MappingFragment StoreEntitySet="Addresses">
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="AddressTypeId" ColumnName="AddressTypeId" />
+          <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+          <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="CountryLookupId" ColumnName="CountryLookupId" />
+          <ScalarProperty Name="StateLookupId" ColumnName="StateLookupId" />
+          <ScalarProperty Name="CityLookupId" ColumnName="CityLookupId" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientContactsInfoes">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.ClientContactsInfo">
+        <MappingFragment StoreEntitySet="ClientContactsInfo">
+          <ScalarProperty Name="ClientContactId" ColumnName="ClientContactId" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="JobTitleLookupId" ColumnName="JobTitleLookupId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifedDate" ColumnName="ModifedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyFieldReports">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.DailyFieldReport">
+        <MappingFragment StoreEntitySet="DailyFieldReport">
+          <ScalarProperty Name="DFRId" ColumnName="DFRId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="WorkOrderId" ColumnName="WorkOrderId" />
+          <ScalarProperty Name="ReportNumber" ColumnName="ReportNumber" />
+          <ScalarProperty Name="WeatherConditionLookupId" ColumnName="WeatherConditionLookupId" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="TimeRecordId" ColumnName="TimeRecordId" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="PerosnInformedName" ColumnName="PerosnInformedName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="MName" ColumnName="MName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Acitve" ColumnName="Acitve" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifedDate" ColumnName="ModifedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LookupCategories">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.LookupCategory">
+        <MappingFragment StoreEntitySet="LookupCategories">
+          <ScalarProperty Name="LookupCategoryId" ColumnName="LookupCategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifedDate" ColumnName="ModifedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.Lookup">
+        <MappingFragment StoreEntitySet="Lookups">
+          <ScalarProperty Name="ParantId" ColumnName="ParantId" />
+          <ScalarProperty Name="LookupId" ColumnName="LookupId" />
+          <ScalarProperty Name="LookupCategoryId" ColumnName="LookupCategoryId" />
+          <ScalarProperty Name="LookupName" ColumnName="LookupName" />
+          <ScalarProperty Name="LookupCode" ColumnName="LookupCode" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NuclearGauges">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.NuclearGauge">
+        <MappingFragment StoreEntitySet="NuclearGauges">
+          <ScalarProperty Name="GaugeId" ColumnName="GaugeId" />
+          <ScalarProperty Name="GaugeNumber" ColumnName="GaugeNumber" />
+          <ScalarProperty Name="GaugeTypeLookupId" ColumnName="GaugeTypeLookupId" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="PorjectName" ColumnName="PorjectName" />
+          <ScalarProperty Name="ProjectNumber" ColumnName="ProjectNumber" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="ProjectTypeLookupId" ColumnName="ProjectTypeLookupId" />
+          <ScalarProperty Name="ProjectManagerId" ColumnName="ProjectManagerId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.Service">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="TypeOfServiceLookupId" ColumnName="TypeOfServiceLookupId" />
+          <ScalarProperty Name="WorkOrderId" ColumnName="WorkOrderId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SoilMaterials">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.SoilMaterial">
+        <MappingFragment StoreEntitySet="SoilMaterials">
+          <ScalarProperty Name="SoilMaterialId" ColumnName="SoilMaterialId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MaterialNumber" ColumnName="MaterialNumber" />
+          <ScalarProperty Name="MaterialDescription" ColumnName="MaterialDescription" />
+          <ScalarProperty Name="SpecifiedCompaction" ColumnName="SpecifiedCompaction" />
+          <ScalarProperty Name="SpecifiedMoisture" ColumnName="SpecifiedMoisture" />
+          <ScalarProperty Name="TestMethodLookupId" ColumnName="TestMethodLookupId" />
+          <ScalarProperty Name="LL" ColumnName="LL" />
+          <ScalarProperty Name="PL" ColumnName="PL" />
+          <ScalarProperty Name="PI" ColumnName="PI" />
+          <ScalarProperty Name="MaxDryDensity" ColumnName="MaxDryDensity" />
+          <ScalarProperty Name="OptimumMoisture" ColumnName="OptimumMoisture" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeRecords">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.TimeRecord">
+        <MappingFragment StoreEntitySet="TimeRecord">
+          <ScalarProperty Name="TimeRecordId" ColumnName="TimeRecordId" />
+          <ScalarProperty Name="TimeDepartOffice" ColumnName="TimeDepartOffice" />
+          <ScalarProperty Name="TimeArriveProject" ColumnName="TimeArriveProject" />
+          <ScalarProperty Name="TimeDepartProject" ColumnName="TimeDepartProject" />
+          <ScalarProperty Name="TimeArriveOffice" ColumnName="TimeArriveOffice" />
+          <ScalarProperty Name="Lunch" ColumnName="Lunch" />
+          <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersRoles">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.UsersRole">
+        <MappingFragment StoreEntitySet="UsersRoles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleNameLookupId" ColumnName="RoleNameLookupId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrders">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.WorkOrder">
+        <MappingFragment StoreEntitySet="WorkOrders">
+          <ScalarProperty Name="WorkOrderId" ColumnName="WorkOrderId" />
+          <ScalarProperty Name="WorkOrderNumber" ColumnName="WorkOrderNumber" />
+          <ScalarProperty Name="AssignEmpId" ColumnName="AssignEmpId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="WorkOrderStatusLookupId" ColumnName="WorkOrderStatusLookupId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login_Logout_Logs">
+      <EntityTypeMapping TypeName="CMTLab_DBModel.Login_Logout_Logs">
+        <MappingFragment StoreEntitySet="Login_Logout_Logs">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DescriptionLookupId" ColumnName="DescriptionLookupId" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="ValidAttempt" ColumnName="ValidAttempt" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

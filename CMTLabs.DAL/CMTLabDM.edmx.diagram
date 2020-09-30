@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="546cea1e715e48b0b6ca7c5359798a72" Name="Diagram1">
+        <EntityTypeShape EntityType="CMTLab_DBModel.Address" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.ClientContactsInfo" Width="1.5" PointX="9.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.Client" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.DailyFieldReport" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.Employee" Width="1.5" PointX="7.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.Login_Logout_Logs" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.LookupCategory" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.Lookup" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.NuclearGauge" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.Project" Width="1.5" PointX="9.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.Service" Width="1.5" PointX="17.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.SoilMaterial" Width="1.5" PointX="15" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.TimeRecord" Width="1.5" PointX="10.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.UsersRole" Width="1.5" PointX="5.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMTLab_DBModel.WorkOrder" Width="1.5" PointX="12" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Addresses_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Addresses_Lookups1" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Addresses_Lookups2" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_AddressType_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Clients_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Employees_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Projects_Addresses1" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_ClientContactsInfo_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_ClientContactsInfo_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_ClientContactsInfo_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_DailyFieldReport_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_DailyFieldReport_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_DailyFieldReport_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_DailyFieldReport_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_DailyFieldReport_TimeRecord" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_DailyFieldReport_WorkOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Employees_UsersRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Projects_Employees1" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_WorkOrder_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Login_Logout_Logs_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Lookups_LookupCategories1" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_NuclearGauges_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Projects_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Services_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_SoilMaterials_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_UsersRoles_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_WorkOrders_Lookups" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_SoilMaterials_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_WorkOrder_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="CMTLab_DBModel.FK_Services_WorkOrders" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMTLab_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Addresses">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddressTypeId" Type="int" Nullable="false" />
+    <Property Name="StreetAddress1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StreetAddress2" Type="nvarchar(max)" />
+    <Property Name="UnitNumber" Type="nvarchar" MaxLength="10" />
+    <Property Name="CountryLookupId" Type="int" Nullable="false" />
+    <Property Name="StateLookupId" Type="int" Nullable="false" />
+    <Property Name="CityLookupId" Type="int" Nullable="false" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientContactsInfo">
+    <Key>
+      <PropertyRef Name="ClientContactId" />
+    </Key>
+    <Property Name="ClientContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="FName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LName" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JobTitleLookupId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="ClientId" />
+    </Key>
+    <Property Name="ClientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AddressId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DailyFieldReport">
+    <Key>
+      <PropertyRef Name="DFRId" />
+    </Key>
+    <Property Name="DFRId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="WorkOrderId" Type="int" Nullable="false" />
+    <Property Name="ReportNumber" Type="varchar" MaxLength="10" />
+    <Property Name="WeatherConditionLookupId" Type="int" Nullable="false" />
+    <Property Name="Summary" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeRecordId" Type="int" Nullable="false" />
+    <Property Name="EmpId" Type="int" Nullable="false" />
+    <Property Name="PerosnInformedName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="MName" Type="nvarchar" MaxLength="15" />
+    <Property Name="LName" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Acitve" Type="bit" Nullable="false" />
+    <Property Name="AddressId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifedDate" Type="datetime" Nullable="false" />
+    <Property Name="RoleId" Type="int" />
+  </EntityType>
+  <EntityType Name="Login_Logout_Logs">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ValidAttempt" Type="bit" Nullable="false" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="DescriptionLookupId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LookupCategories">
+    <Key>
+      <PropertyRef Name="LookupCategoryId" />
+    </Key>
+    <Property Name="LookupCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lookups">
+    <Key>
+      <PropertyRef Name="LookupId" />
+    </Key>
+    <Property Name="LookupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LookupCategoryId" Type="int" Nullable="false" />
+    <Property Name="LookupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LookupCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="ParantId" Type="int" />
+  </EntityType>
+  <EntityType Name="NuclearGauges">
+    <Key>
+      <PropertyRef Name="GaugeId" />
+    </Key>
+    <Property Name="GaugeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GaugeNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="GaugeTypeLookupId" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PorjectName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddressId" Type="int" Nullable="false" />
+    <Property Name="ProjectTypeLookupId" Type="int" Nullable="false" />
+    <Property Name="ProjectManagerId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeOfServiceLookupId" Type="int" Nullable="false" />
+    <Property Name="WorkOrderId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SoilMaterials">
+    <Key>
+      <PropertyRef Name="SoilMaterialId" />
+    </Key>
+    <Property Name="SoilMaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="MaterialNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaterialDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SpecifiedCompaction" Type="decimal" Precision="3" Scale="1" Nullable="false" />
+    <Property Name="SpecifiedMoisture" Type="decimal" Precision="2" Scale="1" Nullable="false" />
+    <Property Name="TestMethodLookupId" Type="int" Nullable="false" />
+    <Property Name="LL" Type="int" Nullable="false" />
+    <Property Name="PL" Type="int" Nullable="false" />
+    <Property Name="PI" Type="int" Nullable="false" />
+    <Property Name="MaxDryDensity" Type="decimal" Precision="3" Scale="1" Nullable="false" />
+    <Property Name="OptimumMoisture" Type="decimal" Precision="2" Scale="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeRecord">
+    <Key>
+      <PropertyRef Name="TimeRecordId" />
+    </Key>
+    <Property Name="TimeRecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeDepartOffice" Type="time" Precision="0" Nullable="false" />
+    <Property Name="TimeArriveProject" Type="time" Precision="0" Nullable="false" />
+    <Property Name="TimeDepartProject" Type="time" Precision="0" Nullable="false" />
+    <Property Name="TimeArriveOffice" Type="time" Precision="0" Nullable="false" />
+    <Property Name="Lunch" Type="decimal" Precision="1" Scale="1" />
+    <Property Name="TotalTime" Type="decimal" Precision="2" Scale="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersRoles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleNameLookupId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrders">
+    <Key>
+      <PropertyRef Name="WorkOrderId" />
+    </Key>
+    <Property Name="WorkOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkOrderNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="AssignEmpId" Type="int" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WorkOrderStatusLookupId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Addresses_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="Addresses" Type="Self.Addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="Addresses">
+        <PropertyRef Name="CountryLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Addresses_Lookups1">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="Addresses" Type="Self.Addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="Addresses">
+        <PropertyRef Name="StateLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Addresses_Lookups2">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="Addresses" Type="Self.Addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="Addresses">
+        <PropertyRef Name="CityLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressType_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="Addresses" Type="Self.Addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="Addresses">
+        <PropertyRef Name="AddressTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientContactsInfo_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="ClientContactsInfo" Type="Self.ClientContactsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="ClientContactsInfo">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientContactsInfo_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="ClientContactsInfo" Type="Self.ClientContactsInfo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="ClientContactsInfo">
+        <PropertyRef Name="ClientContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientContactsInfo_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="ClientContactsInfo" Type="Self.ClientContactsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="ClientContactsInfo">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_Addresses">
+    <End Role="Addresses" Type="Self.Addresses" Multiplicity="1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="AddressId" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DailyFieldReport_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="DailyFieldReport" Type="Self.DailyFieldReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="DailyFieldReport">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DailyFieldReport_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="DailyFieldReport" Type="Self.DailyFieldReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="DailyFieldReport">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DailyFieldReport_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="DailyFieldReport" Type="Self.DailyFieldReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="DailyFieldReport">
+        <PropertyRef Name="WeatherConditionLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DailyFieldReport_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="DailyFieldReport" Type="Self.DailyFieldReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="DailyFieldReport">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DailyFieldReport_TimeRecord">
+    <End Role="TimeRecord" Type="Self.TimeRecord" Multiplicity="1" />
+    <End Role="DailyFieldReport" Type="Self.DailyFieldReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TimeRecord">
+        <PropertyRef Name="TimeRecordId" />
+      </Principal>
+      <Dependent Role="DailyFieldReport">
+        <PropertyRef Name="TimeRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DailyFieldReport_WorkOrders">
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="1" />
+    <End Role="DailyFieldReport" Type="Self.DailyFieldReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrders">
+        <PropertyRef Name="WorkOrderId" />
+      </Principal>
+      <Dependent Role="DailyFieldReport">
+        <PropertyRef Name="WorkOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Addresses">
+    <End Role="Addresses" Type="Self.Addresses" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="AddressId" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_UsersRoles">
+    <End Role="UsersRoles" Type="Self.UsersRoles" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersRoles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Login_Logout_Logs_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="Login_Logout_Logs" Type="Self.Login_Logout_Logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="Login_Logout_Logs">
+        <PropertyRef Name="DescriptionLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lookups_LookupCategories1">
+    <End Role="LookupCategories" Type="Self.LookupCategories" Multiplicity="1" />
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LookupCategories">
+        <PropertyRef Name="LookupCategoryId" />
+      </Principal>
+      <Dependent Role="Lookups">
+        <PropertyRef Name="LookupCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NuclearGauges_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="NuclearGauges" Type="Self.NuclearGauges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="NuclearGauges">
+        <PropertyRef Name="GaugeTypeLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projects_Addresses1">
+    <End Role="Addresses" Type="Self.Addresses" Multiplicity="1" />
+    <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="AddressId" />
+      </Principal>
+      <Dependent Role="Projects">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projects_Employees1">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="Projects">
+        <PropertyRef Name="ProjectManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projects_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="Projects">
+        <PropertyRef Name="ProjectTypeLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="Services" Type="Self.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="TypeOfServiceLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_WorkOrders">
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="1" />
+    <End Role="Services" Type="Self.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrders">
+        <PropertyRef Name="WorkOrderId" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="WorkOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SoilMaterials_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="SoilMaterials" Type="Self.SoilMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="SoilMaterials">
+        <PropertyRef Name="TestMethodLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SoilMaterials_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="SoilMaterials" Type="Self.SoilMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="SoilMaterials">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersRoles_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="UsersRoles" Type="Self.UsersRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="UsersRoles">
+        <PropertyRef Name="RoleNameLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="WorkOrders">
+        <PropertyRef Name="AssignEmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="WorkOrders">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrders_Lookups">
+    <End Role="Lookups" Type="Self.Lookups" Multiplicity="1" />
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookups">
+        <PropertyRef Name="LookupId" />
+      </Principal>
+      <Dependent Role="WorkOrders">
+        <PropertyRef Name="WorkOrderStatusLookupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CMTLab_DBModelStoreContainer">
+    <EntitySet Name="Addresses" EntityType="Self.Addresses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientContactsInfo" EntityType="Self.ClientContactsInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DailyFieldReport" EntityType="Self.DailyFieldReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login_Logout_Logs" EntityType="Self.Login_Logout_Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LookupCategories" EntityType="Self.LookupCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lookups" EntityType="Self.Lookups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NuclearGauges" EntityType="Self.NuclearGauges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SoilMaterials" EntityType="Self.SoilMaterials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeRecord" EntityType="Self.TimeRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersRoles" EntityType="Self.UsersRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkOrders" EntityType="Self.WorkOrders" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Addresses_Lookups" Association="Self.FK_Addresses_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="Addresses" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Addresses_Lookups1" Association="Self.FK_Addresses_Lookups1">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="Addresses" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Addresses_Lookups2" Association="Self.FK_Addresses_Lookups2">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="Addresses" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressType_Lookups" Association="Self.FK_AddressType_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="Addresses" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientContactsInfo_Clients" Association="Self.FK_ClientContactsInfo_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientContactsInfo" EntitySet="ClientContactsInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientContactsInfo_Lookups" Association="Self.FK_ClientContactsInfo_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="ClientContactsInfo" EntitySet="ClientContactsInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientContactsInfo_Projects" Association="Self.FK_ClientContactsInfo_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ClientContactsInfo" EntitySet="ClientContactsInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_Addresses" Association="Self.FK_Clients_Addresses">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DailyFieldReport_Clients" Association="Self.FK_DailyFieldReport_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="DailyFieldReport" EntitySet="DailyFieldReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DailyFieldReport_Employees" Association="Self.FK_DailyFieldReport_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="DailyFieldReport" EntitySet="DailyFieldReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DailyFieldReport_Lookups" Association="Self.FK_DailyFieldReport_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="DailyFieldReport" EntitySet="DailyFieldReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DailyFieldReport_Projects" Association="Self.FK_DailyFieldReport_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="DailyFieldReport" EntitySet="DailyFieldReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DailyFieldReport_TimeRecord" Association="Self.FK_DailyFieldReport_TimeRecord">
+      <End Role="TimeRecord" EntitySet="TimeRecord" />
+      <End Role="DailyFieldReport" EntitySet="DailyFieldReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DailyFieldReport_WorkOrders" Association="Self.FK_DailyFieldReport_WorkOrders">
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+      <End Role="DailyFieldReport" EntitySet="DailyFieldReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Addresses" Association="Self.FK_Employees_Addresses">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_UsersRoles" Association="Self.FK_Employees_UsersRoles">
+      <End Role="UsersRoles" EntitySet="UsersRoles" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Login_Logout_Logs_Lookups" Association="Self.FK_Login_Logout_Logs_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="Login_Logout_Logs" EntitySet="Login_Logout_Logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lookups_LookupCategories1" Association="Self.FK_Lookups_LookupCategories1">
+      <End Role="LookupCategories" EntitySet="LookupCategories" />
+      <End Role="Lookups" EntitySet="Lookups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NuclearGauges_Lookups" Association="Self.FK_NuclearGauges_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="NuclearGauges" EntitySet="NuclearGauges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projects_Addresses1" Association="Self.FK_Projects_Addresses1">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projects_Employees1" Association="Self.FK_Projects_Employees1">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projects_Lookups" Association="Self.FK_Projects_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_Lookups" Association="Self.FK_Services_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_WorkOrders" Association="Self.FK_Services_WorkOrders">
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SoilMaterials_Lookups" Association="Self.FK_SoilMaterials_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="SoilMaterials" EntitySet="SoilMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SoilMaterials_Projects" Association="Self.FK_SoilMaterials_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="SoilMaterials" EntitySet="SoilMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersRoles_Lookups" Association="Self.FK_UsersRoles_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="UsersRoles" EntitySet="UsersRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_Employees" Association="Self.FK_WorkOrder_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_Projects" Association="Self.FK_WorkOrder_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrders_Lookups" Association="Self.FK_WorkOrders_Lookups">
+      <End Role="Lookups" EntitySet="Lookups" />
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

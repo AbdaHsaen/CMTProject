@@ -1,0 +1,37 @@
+﻿@model CMTLabs.Models.Login.LoginObjectModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>Sign in</h1>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken() // Help to prevent Cross Site Scripting
+    <div class="form-horizontal">
+        <h1></h1>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text=danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.UserName, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.Password,  new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-3">
+                <input type="submit" value="Sign in" class="btn btn-primary btn-lg" />
+            </div>
+        </div>
+    </div>
+}
