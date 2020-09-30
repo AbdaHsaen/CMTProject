@@ -4,3 +4,9 @@ C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.Common\obj\Debug\CMTLabs.Common.cspr
 C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.Common\obj\Debug\CMTLabs.Common.csproj.CoreCompileInputs.cache
 C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.Common\obj\Debug\CMTLabs.Common.dll
 C:\Users\AbdDa\source\repos\CMTLabs\CMTLabs.Common\obj\Debug\CMTLabs.Common.pdb
+C:\Users\AbdDa\Source\Repos\CMTProject\CMTLabs.Common\bin\Debug\CMTLabs.Common.dll
+C:\Users\AbdDa\Source\Repos\CMTProject\CMTLabs.Common\bin\Debug\CMTLabs.Common.pdb
+C:\Users\AbdDa\Source\Repos\CMTProject\CMTLabs.Common\obj\Debug\CMTLabs.Common.csprojAssemblyReference.cache
+C:\Users\AbdDa\Source\Repos\CMTProject\CMTLabs.Common\obj\Debug\CMTLabs.Common.csproj.CoreCompileInputs.cache
+C:\Users\AbdDa\Source\Repos\CMTProject\CMTLabs.Common\obj\Debug\CMTLabs.Common.dll
+C:\Users\AbdDa\Source\Repos\CMTProject\CMTLabs.Common\obj\Debug\CMTLabs.Common.pdb
