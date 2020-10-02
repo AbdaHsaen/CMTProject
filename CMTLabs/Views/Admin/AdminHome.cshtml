@@ -6,75 +6,16 @@
 }
 
 <div class="col-md-12">
-    <h2 class="page-header">Employee's List<small style="margin-left: 25px"></small></h2>
+    <h2 class="page-header">Administrator Home Page<small style="margin-left: 25px"></small></h2>
 </div>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="col-md-12">
-        @Html.ActionLink("Create New Employee", "Home", "Employees", null,new { @class = "btn btn-primary btn-lg" }) 
-        @Html.ActionLink("Lookup Categories", "LookupCategoriesHome", "LookupCategories", null, new { @class = "btn btn-primary btn-lg" })
-    </div>
     <div class="form-horizontal">
-        <div class="form-group"></div>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.FName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.MName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DOB)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PhoneNumber)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.EmailAddress)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Acitve)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.LName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DOB.Date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PhoneNumber)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EmailAddress)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Acitve)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { EmpId = item.EmpId }) |
-                        @Html.ActionLink("Details", "Details", new { EmpId = item.EmpId })
-                    </td>
-                </tr>
-            }
-
-        </table>
+        <div>  @Html.ActionLink("Employees", "EmployeesHome", "Employees", null, new { @class = "btn btn-primary btn-lg" })</div>
+        <hr/>
+    
+        <div>  @Html.ActionLink("Lookup Categories", "LookupCategoriesHome", "LookupCategories", null, new { @class = "btn btn-primary btn-lg" })</div>
     </div>
 }

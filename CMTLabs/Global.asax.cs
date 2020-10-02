@@ -21,7 +21,7 @@ namespace CMTLabs.UI
 
             Mapper.CreateMap<EmployeeDTO, EmployeeObjectModel>().ReverseMap();
             Mapper.CreateMap<LookupCategoryDTO, LookupCategoiresObjectModel>().ReverseMap();
-
+            Mapper.CreateMap<LookupDTO, LookupObjectModel>().ReverseMap();
         }
     }
 }

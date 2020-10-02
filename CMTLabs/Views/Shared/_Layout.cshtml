@@ -19,8 +19,13 @@
                 @*  @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <ul class="nav navbar-nav pull-right">
+
+                    <li>
+                        @Html.ActionLink("Logout", "Index", "Logout", null, new { @class = "btn btn-primary btn-lg" })
+                    </li>
+
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                 </ul>
@@ -29,7 +34,7 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-       
+
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
@@ -47,6 +52,24 @@
 
             $('form').validate();
         });
+
+
+        //----------------------------------------------------------------------------
+        // prevnt user form using back button of the browser....
+
+        function DisableBackButtonAllBrowsers() {
+            window.history.forward()
+        };
+        DisableBackButtonAllBrowsers();
+        window.onload = DisableBackButtonAllBrowsers;
+        window.onpageshow = function (evts) { if (evts.persisted) DisableBackButtonAllBrowsers(); };
+        window.onunload = function () { void (0) };
+
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+        //---------------------------------------------------------------------------
+
 
     </script>
 </body>

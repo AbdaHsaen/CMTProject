@@ -9,7 +9,7 @@ namespace CMTLabs.Controllers.Technicians
     public class TechController : Controller
     {
         // GET: TechnicianHome
-        public ActionResult Index()
+        public ActionResult TechHome()
         {
             return View();
         }

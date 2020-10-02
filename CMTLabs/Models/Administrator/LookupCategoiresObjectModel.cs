@@ -16,6 +16,8 @@ namespace CMTLabs.Models.Administrator
         public string CategoryName { get; set; }
         [DisplayName("Created Date")]
         public DateTime CreatedDate { get; set; }
+        [DisplayName("Modified Date")]
+        public DateTime ModifedDate { get; set; }
 
         public ICollection<LookupObjectModel> Lookups { get; set; }
     }

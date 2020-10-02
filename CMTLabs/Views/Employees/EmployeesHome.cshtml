@@ -1,0 +1,80 @@
+﻿@model IEnumerable<CMTLabs.Models.Administrator.EmployeeObjectModel>
+
+@{
+    ViewBag.Title = "EmployeesHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employees Home</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<p>
+    @Html.ActionLink("Create New Employee", "Create", null, null, new { @class = "btn btn-primary btn-lg" })
+</p>
+    <div class="form-horizontal">
+        <div class="form-group"></div>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DOB)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmailAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Acitve)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DOB.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Acitve)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { EmpId = item.EmpId }) |
+                        @Html.ActionLink("Details", "Details", new { EmpId = item.EmpId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <div>
+        @Html.ActionLink("Back", "AdminHome", "Admin", null, new { @class = "btn btn-primary btn-lg" })
+    </div>
+}

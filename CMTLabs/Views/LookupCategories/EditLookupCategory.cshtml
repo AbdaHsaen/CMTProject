@@ -1,21 +1,20 @@
 ﻿@model CMTLabs.Models.Administrator.LookupCategoiresObjectModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "EditLookupCategory";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>EditLookupCategory</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    @Html.HiddenFor(model => model.LookupCategoryId)
     <div class="form-horizontal">
         <h4>LookupCategoiresObjectModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
 
         <div class="form-group">
             @Html.LabelFor(model => model.CategoryName, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -24,15 +23,14 @@
                 @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "LookupCategoriesHome", null, null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("Back", "LookupCategoriesHome", null, null, new { @class = "btn btn-primary btn-lg" })
 </div>

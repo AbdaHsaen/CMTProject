@@ -15,5 +15,7 @@ namespace CMTLabs.DAL.LookupCategories
         void UpdateLookupCategory(LookupCategoryDTO lookupCategoriesDTO);
 
         void DeleteLookupCategory(int LookupCategoryId);
+
+        LookupCategoryDTO GetLookupCategoryWithLookupChilds(int LookupCategoryId);
     }
 }

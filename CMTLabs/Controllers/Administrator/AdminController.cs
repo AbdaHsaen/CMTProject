@@ -15,26 +15,11 @@ namespace CMTLabs.Controllers.Administrator
 
     public class AdminController : Controller
     {
-        AdminOperation adminOperation;
-        public AdminController()
-        {
-            if (adminOperation == null)
-                adminOperation = new AdminOperation();
-        }
+       
         // GET: Home
-        public ActionResult AdminHome(EmployeeDTO employeeDTO)
-        {
-            var lstEmployeesDto = adminOperation.GetAllEmployees();
-
-            var employeeObjectModels = Mapper.Map<List<EmployeeDTO>, List<EmployeeObjectModel>>(lstEmployeesDto);
-
-            return View(employeeObjectModels);
-        }
-
-        public ActionResult CreateNewEmployee()
+        public ActionResult AdminHome()
         {
             return View();
         }
-
     }
 }

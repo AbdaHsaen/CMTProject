@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CMTLabs.Controllers.Administrator
+namespace CMTLabs.Controllers.Dispatch
 {
-    public class LookupsController : Controller
+    public class DispatchController : Controller
     {
-        // GET: LookupCategories
-        public ActionResult Index()
+        // GET: Dispatch
+        public ActionResult DispatchHome()
         {
             return View();
         }

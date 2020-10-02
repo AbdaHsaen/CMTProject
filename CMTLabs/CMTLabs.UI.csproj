@@ -166,10 +166,11 @@
     <Compile Include="Controllers\Administrator\AdminController.cs" />
     <Compile Include="Controllers\Administrator\EmployeesController.cs" />
     <Compile Include="Controllers\Administrator\LookupCategoriesController.cs" />
-    <Compile Include="Controllers\Administrator\LookupsController.cs" />
+    <Compile Include="Controllers\Dispatch\DispatchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Login\LoginController.cs" />
     <Compile Include="Controllers\ProjectManagers\PMController.cs" />
+    <Compile Include="Controllers\Shared\LogoutController.cs" />
     <Compile Include="Controllers\Technicians\TechController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,13 +226,18 @@
     <Content Include="Views\LookupCategories\Create.cshtml" />
     <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
     <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
+    <Content Include="Views\LookupCategories\Details.cshtml" />
+    <Content Include="Views\Lookups\AddNewLookup.cshtml" />
+    <Content Include="Views\LookupCategories\EditLookupCategory.cshtml" />
+    <Content Include="Views\Employees\EmployeesHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Dispatch\" />
     <Folder Include="Models\ProjectManagers\" />
     <Folder Include="Models\Technicians\" />
-    <Folder Include="Views\Employees\" />
+    <Folder Include="Views\Dispatch\" />
+    <Folder Include="Views\Logout\" />
     <Folder Include="Views\PM\" />
     <Folder Include="Views\Technician\" />
   </ItemGroup>

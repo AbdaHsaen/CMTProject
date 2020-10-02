@@ -44,7 +44,6 @@ namespace CMTLabs.Controllers.Administrator
                 var lookupCategoryDTO = Mapper.Map<LookupCategoiresObjectModel, LookupCategoryDTO>(model);
 
                 AdminOperation.AddNewLookupCategory(lookupCategoryDTO);
-                TempData["UserMessage"] = Constraints.AddNewLookupCategorySuccessfully;
                 return RedirectToAction("LookupCategoriesHome");
             }
             else
@@ -52,5 +51,50 @@ namespace CMTLabs.Controllers.Administrator
 
         }
 
+        public ActionResult Details(int Id)
+        {
+            var objLookupCategoryDTO = AdminOperation.GetLookupCategoryWithLookupChilds(Id);
+
+            if (objLookupCategoryDTO != null)
+            {
+                var objLookupCategoryObjectModel = Mapper.Map<LookupCategoryDTO, LookupCategoiresObjectModel>(objLookupCategoryDTO);
+                return View(objLookupCategoryObjectModel);
+            }
+            else
+            {
+                return View("NotFound");
+            }
+
+        }
+
+        [HttpGet]
+        public ActionResult EditLookupCategory(int Id)
+        {
+            var objLookupCategoryDTO = AdminOperation.GetLookupCategoryById(Id);
+
+            if (objLookupCategoryDTO != null)
+            {
+                var objLookupCategoryObjectModel = Mapper.Map<LookupCategoryDTO, LookupCategoiresObjectModel>(objLookupCategoryDTO);
+                return View(objLookupCategoryObjectModel);
+            }
+            else
+            {
+                return View("NotFound");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult EditLookupCategory(LookupCategoiresObjectModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var objLookupCateoryDTO = Mapper.Map<LookupCategoiresObjectModel, LookupCategoryDTO>(model);
+
+                AdminOperation.UpdateLookupCategory(objLookupCateoryDTO);
+
+                return RedirectToAction("LookupCategoriesHome");
+            }
+            return View(model);
+        }
     }
 }

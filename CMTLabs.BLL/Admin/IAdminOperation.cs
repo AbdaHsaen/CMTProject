@@ -14,5 +14,11 @@ namespace CMTLabs.BLL.Admin
         List<LookupCategoryDTO> GetLookupCategories();
 
         void AddNewLookupCategory(LookupCategoryDTO lookupCategoriesDTO);
+
+        LookupCategoryDTO GetLookupCategoryWithLookupChilds(int LookupCategoryId);
+
+        LookupCategoryDTO GetLookupCategoryById(int LookupCategoryId);
+
+        void UpdateLookupCategory(LookupCategoryDTO lookupCategoryDTO);
     }
 }

@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Data.SqlClient;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CMTLabs.DAL.LookupCategories
 {
@@ -41,12 +42,32 @@ namespace CMTLabs.DAL.LookupCategories
 
         public LookupCategoryDTO GetLookupCategoryById(int LookupCategoryId)
         {
-            throw new NotImplementedException();
+            var objLookupCategory = Entities.LookupCategories.Where(x => x.LookupCategoryId == LookupCategoryId).First();
+
+            var objLookupCategoryDTO = Mapper.Map<LookupCategory, LookupCategoryDTO>(objLookupCategory);
+
+            return objLookupCategoryDTO;
+        }
+
+        public LookupCategoryDTO GetLookupCategoryWithLookupChilds(int LookupCategoryId)
+        {
+            var objLookupCategory = Entities.LookupCategories.Include("Lookups").Where(x => x.LookupCategoryId == LookupCategoryId).First();
+
+            var objLookupCategoryDTO = Mapper.Map<LookupCategory, LookupCategoryDTO>(objLookupCategory);
+
+            return objLookupCategoryDTO;
         }
 
         public void UpdateLookupCategory(LookupCategoryDTO lookupCategoriesDTO)
         {
-            throw new NotImplementedException();
+            var objLookupCategory = Entities.LookupCategories.Where(x => x.LookupCategoryId == lookupCategoriesDTO.LookupCategoryId).First();
+
+            objLookupCategory.CategoryName = lookupCategoriesDTO.CategoryName;
+            objLookupCategory.ModifedDate = DateTime.Now;
+
+            Entities.Entry(objLookupCategory).State = EntityState.Modified;
+
+            Entities.SaveChanges();
         }
     }
 }

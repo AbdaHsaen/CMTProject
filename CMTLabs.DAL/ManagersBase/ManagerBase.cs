@@ -18,6 +18,7 @@ namespace CMTLabs.DAL.ManagersBase
 
             Mapper.CreateMap<Employee, EmployeeDTO>().ReverseMap();
             Mapper.CreateMap<LookupCategory, LookupCategoryDTO>().ReverseMap();
+            Mapper.CreateMap<Lookup, LookupDTO>().ReverseMap();
         }
     }
 }

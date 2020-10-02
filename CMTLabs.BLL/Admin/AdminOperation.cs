@@ -32,5 +32,24 @@ namespace CMTLabs.BLL.Admin
 
             return lstLookupCategoriesDTO;
         }
+
+        public LookupCategoryDTO GetLookupCategoryById(int LookupCategoryId)
+        {
+            var objLookupCategoryDTO = LookupCategoryManager.GetLookupCategoryById(LookupCategoryId);
+
+            return objLookupCategoryDTO;
+        }
+
+        public LookupCategoryDTO GetLookupCategoryWithLookupChilds(int LookupCategoryId)
+        {
+            var objLookupCategoryDTO = LookupCategoryManager.GetLookupCategoryWithLookupChilds(LookupCategoryId);
+
+            return objLookupCategoryDTO;
+        }
+
+        public void UpdateLookupCategory(LookupCategoryDTO lookupCategoryDTO)
+        {
+            LookupCategoryManager.UpdateLookupCategory(lookupCategoryDTO);
+        }
     }
 }

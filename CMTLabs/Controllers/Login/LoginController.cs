@@ -43,9 +43,11 @@ namespace CMTLabs.Controllers.Login
                     if (UserRoleCode == Constraints.Admin)
                         return RedirectToAction("AdminHome", "Admin", employeeDTO);
                     else if (UserRoleCode == Constraints.ProjectManager)
-                        return RedirectToAction("Index", "PM", employeeDTO);
+                        return RedirectToAction("PMHome", "PM", employeeDTO);
+                    else if (UserRoleCode == Constraints.Technician)
+                        return RedirectToAction("TechHome", "Tech", employeeDTO);
                     else
-                        return RedirectToAction("Index", "Tech", employeeDTO);
+                        return RedirectToAction("DispatchHome", "Dispatch", employeeDTO);
                 }
                 else
                     return View(model);

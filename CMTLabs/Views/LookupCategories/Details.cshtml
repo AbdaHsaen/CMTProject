@@ -1,0 +1,48 @@
+﻿@model CMTLabs.Models.Administrator.LookupCategoiresObjectModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>  @Html.DisplayFor(model => model.CategoryName) Lookups</h2>
+    <hr />
+</div>
+
+@if (Model.Lookups != null && Model.Lookups.Count > 0)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lookups.First().LookupName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lookups.First().LookupCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lookups.First().CreatedDate)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model.Lookups)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LookupName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LookupCode)
+                </td>
+                <td>
+                    @Html.Label($"{item.CreatedDate.Date.Month}/{item.CreatedDate.Day}/{item.CreatedDate.Year}")
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+<div>
+    @Html.ActionLink("Back", "LookupCategoriesHome", "LookupCategories", null, new { @class = "btn btn-primary btn-lg" })
+</div>

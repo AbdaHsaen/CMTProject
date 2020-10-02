@@ -9,7 +9,7 @@ namespace CMTLabs.Controllers.ProjectManagers
     public class PMController : Controller
     {
         // GET: ProjectManagerHome
-        public ActionResult Index()
+        public ActionResult PMHome()
         {
             return View();
         }
